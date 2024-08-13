@@ -4,18 +4,20 @@ import { getPersonById, updatePerson } from "@/actions/person";
 import Button from "@/components/atoms/button";
 import Input, { SelectInputGender } from "@/components/atoms/input";
 import Breadcrumb from "@/components/moleculs/Breadcrum";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function Edit({ params }: { params: { id: string } }){
+export default function Edit(){
     const router = useRouter()
+    const searchParams = useSearchParams()
     const [name, setName] = useState<string>()
     const [gender, setGender] = useState<"male" | "female">("male")
     const [address, setAddress] = useState<string>()
     const [age, setAge] = useState<number>()
+    const id = searchParams.get("id") as string
 
     useEffect(() => {
-        const person = getPersonById(params.id)
+        const person = getPersonById(id)
         if(person){
             setName(person.name)
             setAddress(person.address)
@@ -28,7 +30,7 @@ export default function Edit({ params }: { params: { id: string } }){
         if(!name || !gender || !address || !age) {
             return
         }
-        updatePerson( params.id, {name, gender, address, age})
+        updatePerson( id, {name, gender, address, age})
         router.replace("/dashboard")
     }
 

@@ -39,7 +39,7 @@ export default function PersonItem(props: PersonItemProps) {
                 { person.address }
             </td>
             <td className="px-6 py-4 flex gap-x-2">
-                <button className="flex items-center gap-x-2 py-2 px-4 rounded-lg bg-yellow-500" onClick={() => router.push("/dashboard/edit/"+_id)}>
+                <button className="flex items-center gap-x-2 py-2 px-4 rounded-lg bg-yellow-500" onClick={() => router.push("/dashboard/edit?id="+_id)}>
                     <BiEdit size={20} color="white" />
                     <p className="text-white">Edit</p>
                 </button>
