@@ -38,7 +38,7 @@ export function InputPassword(props: InputProps) {
             </div>
             {
                 props.error &&
-                <p className="text-red-500 text-sm mt-2">Password salah (isi dengan "admin")</p>
+                <p className="text-red-500 text-sm mt-2">Password salah (isi dengan &apos;admin&apos;)</p>
             }
         </div>
     )

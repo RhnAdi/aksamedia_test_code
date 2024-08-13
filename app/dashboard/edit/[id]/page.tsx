@@ -1,6 +1,6 @@
 'use client'
 
-import { getPersonById, savePerson, updatePerson } from "@/actions/person";
+import { getPersonById, updatePerson } from "@/actions/person";
 import Button from "@/components/atoms/button";
 import Input, { SelectInputGender } from "@/components/atoms/input";
 import Breadcrumb from "@/components/moleculs/Breadcrum";
@@ -34,9 +34,9 @@ export default function Edit({ params }: { params: { id: string } }){
 
     return(
         <div className="px-4 md:px-8 lg:px-16 py-10">
-            <Breadcrumb data={[{ href: "", title: "Add Person" }]} />
+            <Breadcrumb data={[{ href: "", title: "Edit Person" }]} />
             <div className="flex flex-col gap-y-4 mt-8">
-                <p className="text-xl font-semibold dark:text-white">Add Person</p>
+                <p className="text-xl font-semibold dark:text-white">Edit Person</p>
                 <hr className="h-1 w-full bg-gray-200 dark:bg-slate-800" />
                 <Input value={name} label={"Name"} placeholder="Input Name" onChange={(e) => setName(e.target.value)} />
                 <div className="flex gap-x-2 items-center">

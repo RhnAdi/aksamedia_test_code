@@ -16,7 +16,7 @@ export default function DashboardLayout({
                 router.replace("/auth")
             }
         }
-    }, [])
+    }, [router])
     return (
         <div>
             <Navbar />

@@ -100,7 +100,7 @@ export default function Dashboard(){
                         <tbody>
                             {
                                 paginatedData.map(({key, person}) => {
-                                    return <PersonItem _id={key} person={person} update={(data) => setPersons(data)}/>
+                                    return <PersonItem key={key} _id={key} person={person} update={(data) => setPersons(data)}/>
                                 })
                             }
                         </tbody>

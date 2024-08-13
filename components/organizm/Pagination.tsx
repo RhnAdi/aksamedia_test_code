@@ -24,7 +24,7 @@ export default function Pagination(props: PaginationProps) {
                 {
                     new Array(props.count).fill(0).map((_, i) => {
                         return(
-                            <li>
+                            <li key={i}>
                                 <button
                                     onClick={() => {
                                         if(props.active == i+1 ){
