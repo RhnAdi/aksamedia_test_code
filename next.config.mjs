@@ -1,16 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    reactStrictMode: true,
+    basePath: "/aksamedia_test_code",
+    assetPrefix: "/aksamedia_test_code/",
     experimental: {
         missingSuspenseWithCSRBailout: false,
     },
-    images: {
-        loader: "aksamedia_test_code",
-        path: "",
-    },
-    assetPrefix: "./",
-    basePath: "/aksamedia_test_code",
     output: "export",
-    reactStrictMode: true,
 };
 
 export default nextConfig;
